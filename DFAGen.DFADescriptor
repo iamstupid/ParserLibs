@@ -1,0 +1,24 @@
+cst dig [0-9]
+cst dot .
+cst minplus +-
+cst ident [a-z] [A-Z] [0-9] _+-*/=%^&|<>;:?!@#$|
+cst bracket ([])
+node trivial D
+node pre A
+node num A
+node dot D
+node flo A
+node ide A
+node bra A
+link trivial ide ident
+link ide ide ident
+link trivial pre minplus
+link pre num dig
+link trivial num dig
+link num num dig
+link trivial dot dot
+link pre dot dot
+link dot flo dig
+link num flo dot
+link flo flo dig
+link trivial bra bracket
